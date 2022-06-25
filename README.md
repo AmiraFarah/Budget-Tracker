@@ -7,12 +7,7 @@
 Date | Progress | Blockers | Goals
 -----|-----|-----|-----|
 06/25/2022 | Folder staructure created , user , statement models created | none | connect to db , create routes,controllers for my models.|
-## Models
-***
-```js
-User
-Account
-```
+
 ##  Technologies
 1. Express
 2. Mongoose

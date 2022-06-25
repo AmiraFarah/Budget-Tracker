@@ -5,7 +5,7 @@ const accountSchema = new Schema ({
                                    deposit : Number,
                                    withdrawl : Number ,
                                    balance : Number ,
-                                   date : Date
+                                   date1 : Date
                                   })
 
-module.exports = (mongoose.model,'Account',accountSchema)
+module.exports = mongoose.model('Account',accountSchema)
