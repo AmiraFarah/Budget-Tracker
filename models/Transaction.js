@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const accountSchema = new Schema ({
-                                    accountNum :
+const transactionSchema = new Schema ({
+                                    userName :
                                             { type : String,
                                               unique : true ,
                                               required : true },
@@ -12,4 +12,4 @@ const accountSchema = new Schema ({
                                    date : Date
                                   })
 
-module.exports = mongoose.model('Account',accountSchema)
+module.exports = mongoose.model('Transaction',transactionSchema)

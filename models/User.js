@@ -19,10 +19,7 @@ const userSchema = new Schema({
                     trime : true ,
                     unique : true ,
                     lowercase : true},
-         deposit :
-                  { type : Number },
-         withdrawl :
-                  { type : Number}
+        
 })
 
 module.exports= mongoose.model('User',userSchema)

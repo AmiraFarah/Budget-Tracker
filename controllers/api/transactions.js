@@ -1,10 +1,10 @@
-const Account = require('../../models/Account')
+const Transaction = require('../../models/Transaction')
 
 // Find all accounts
 const index = async(req,res)=>{
     try {
-           const accounts = await Account.find({})   
-             res.status(200).json(accounts)
+           const transactions = await Transaction.find({})   
+             res.status(200).json(transactions)
         } catch (e) {
        res.status(400).json({msg:e.message}) 
     }
@@ -13,8 +13,8 @@ const index = async(req,res)=>{
 // create account 
 const create = async(req, res)=>{
     try {
-        const createdAccount = await Account.create(req.body)
-        res.status(200).json(createdAccount)
+        const createdTransaction = await Transaction.create(req.body)
+        res.status(200).json(createdTransaction)
     } catch (e) {
         res.status(400).json({msg:e.message})
         
@@ -24,8 +24,8 @@ const create = async(req, res)=>{
 // update account
 const update = async(req, res)=>{
     try {
-        const updatedAccount = await Account.findByIdAndUpdate(req.params.id,req.body,{new:true})
-        res.status(200).json(updatedAccount)
+        const updatedTransaction = await Transaction.findByIdAndUpdate(req.params.id,req.body,{new:true})
+        res.status(200).json(updatedTransaction)
     } catch (e) {
         res.status(400).json({msg:e.message})
         
@@ -36,8 +36,8 @@ const update = async(req, res)=>{
 // delete  account
 const remove = async(req, res)=>{
     try {
-        const deletedAccount = await Account.findByIdAndDelete(req.params.id)
-        res.status(200).json(deletedAccount)
+        const deletedTransaction = await Transaction.findByIdAndDelete(req.params.id)
+        res.status(200).json(deletedTransaction)
     } catch (e) {
         res.status(400).json({msg:e.message})
         

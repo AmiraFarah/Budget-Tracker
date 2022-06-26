@@ -9,7 +9,10 @@ app.use(express.json())
 
 //===========route===========
 // Accounts
-app.use('/api/v1/accounts', require('./routes/api/accounts.js'))
+app.use('/api/v1/transactions', require('./routes/api/transactions.js'))
+
+//Users
+app.use('/api/v1/users',require('./routes/api/users'))
 
 //==========port=============
 const port = 9090
