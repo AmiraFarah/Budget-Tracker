@@ -1,15 +1,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const transactionSchema = new Schema ({
-                                    userName :
-                                            { type : String,
-                                              unique : true ,
-                                              required : true },
-                                   deposit : Number,
-                                   withdrawl : Number ,
-                                   balance : Number ,
-                                   date : Date
-                                  })
+const transactionSchema = new Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  trans_name: String,
+  trans_type: String,
+  amount: Number,
+  date: {
+    type: Date,
+    default: Date.now
+  }
+})
 
-module.exports = mongoose.model('Transaction',transactionSchema)
+module.exports = mongoose.model('Transaction', transactionSchema)

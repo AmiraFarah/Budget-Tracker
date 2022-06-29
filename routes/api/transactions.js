@@ -5,8 +5,11 @@ const transactionsCtrl = require ('../../controllers/api/transactions')
 // GET /api/v1/accounts
 router.get('/', transactionsCtrl.index)
 
-//POST /api/v1/accounts
+// Get transactions 
+router.get('/user', transactionsCtrl.findTransByUserId)
+//POST /api/v1/transactions
 router.post('/', transactionsCtrl.create)
+
 
 //PUT /api/v1/accounts/:id
 router.put('/:id', transactionsCtrl.update)

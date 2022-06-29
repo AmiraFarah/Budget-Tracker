@@ -4,13 +4,6 @@ const bcrypt = require('bcrypt')
 const saltRounds = 10
 
 const userSchema = new Schema({
-
-  userName:
-  {
-    type: String,
-    required: true,
-    unique: true
-  },
   password:
   {
     type: String,
@@ -26,7 +19,10 @@ const userSchema = new Schema({
     trime: true,
     unique: true,
     lowercase: true
-  }},{
+  },
+  balance : Number ,
+
+  },{
        timestamps :true,
        toJSON: {
     // ret is the JSON'ed User Document

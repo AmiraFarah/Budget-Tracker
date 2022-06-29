@@ -1,11 +1,13 @@
 // import
 const express = require('express')
 const app = express()
+const cors = require('cors')
 require('dotenv').config()
 require('./config/database')
 
 //=======Middleware===========
 app.use(express.json())
+app.use(cors())
 
 // check if we have a token and create
 app.use(require('./config/checkToken'))

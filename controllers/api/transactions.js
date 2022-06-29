@@ -10,9 +10,21 @@ const index = async(req,res)=>{
     }
 }
 
+// Find a transactions for a specific user
+
+const findTransByUserId = async(req,res)=>{
+    try {
+           const transactions = await Transaction.find({userId:req.user._id})   
+             res.status(200).json(transactions)
+        } catch (e) {
+       res.status(400).json({msg:e.message}) 
+    }
+}
+
 // create account 
 const create = async(req, res)=>{
     try {
+        req.body.userId = req.user._id
         const createdTransaction = await Transaction.create(req.body)
         res.status(200).json(createdTransaction)
     } catch (e) {
@@ -48,5 +60,6 @@ module.exports = {
     index,
     create,
     update,
-    remove
+    remove,
+    findTransByUserId
 }
