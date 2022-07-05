@@ -3,9 +3,9 @@ const Schema = mongoose.Schema
 
 const transactionSchema = new Schema({
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'User'  
+   },
   trans_name: String,
   trans_type: String,
   amount: Number,

@@ -1,30 +1,30 @@
 const Transaction = require('../../models/Transaction')
 
 // Find all accounts
-const index = async(req,res)=>{
-    try {
-           const transactions = await Transaction.find({})   
-             res.status(200).json(transactions)
-        } catch (e) {
-       res.status(400).json({msg:e.message}) 
-    }
-}
+// const index = async(req,res)=>{
+//     try {
+//            const transactions = await Transaction.find({})   
+//              res.status(200).json(transactions)
+//         } catch (e) {
+//        res.status(400).json({msg:e.message}) 
+//     }
+// }
 
 // Find a transactions for a specific user
 
 const findTransByUserId = async(req,res)=>{
     try {
-           const transactions = await Transaction.find({userId:req.user._id})   
+           const transactions = await Transaction.find({userId:req.params.id})   
              res.status(200).json(transactions)
         } catch (e) {
        res.status(400).json({msg:e.message}) 
     }
 }
 
-// create account 
+// create transaction per user 
 const create = async(req, res)=>{
     try {
-        req.body.userId = req.user._id
+       req.body.userId = req.params.id
         const createdTransaction = await Transaction.create(req.body)
         res.status(200).json(createdTransaction)
     } catch (e) {
@@ -57,7 +57,7 @@ const remove = async(req, res)=>{
 }
 
 module.exports = {
-    index,
+    //index,
     create,
     update,
     remove,
