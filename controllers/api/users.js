@@ -40,6 +40,7 @@ const login = async (req,res)=>{
 const show = async (req, res) => {
 
     try {
+        console.log(req.params.id,'req id ')
        const foundUser = await User.findById(req.params.id)
         res.status(200).json(foundUser)
 
@@ -53,8 +54,11 @@ const show = async (req, res) => {
 const update = async (req, res) => {
 
     try {
-        req.body.password = await bcrypt.hash(req.body.password,10)
+      //  console.log(req.body,'req.body')
+      //  req.body.password = await bcrypt.hash(req.body.password,10)
+        // req.body.balance= req.
        const updatedUser = await User.findByIdAndUpdate(req.params.id,req.body,{new:true})
+       //console.log(res.body.balance,'after')
         res.status(200).json(updatedUser)
 
     } catch (e) {
@@ -62,6 +66,7 @@ const update = async (req, res) => {
 
     }
 }
+
 
 // Helper function
 //secret key is private to ypu which means you will never reveal 

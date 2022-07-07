@@ -21,6 +21,8 @@ const userSchema = new Schema({
     lowercase: true
   },
   balance : Number ,
+  income: Number,
+  expences : Number,
 
   },{
        timestamps :true,

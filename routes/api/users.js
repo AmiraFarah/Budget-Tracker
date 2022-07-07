@@ -12,8 +12,11 @@ router.post('/', usersCtrl.create)
  router.post('/login', usersCtrl.login)
 // routes below shoudl not be accessible to un authorized users
 
+//put /api/v1/users/:id
+router.put('/:id',usersCtrl.update)
+
 // GET /api/v1/users
- router.get('/:id',ensureLoggedIn, usersCtrl.show)
+ router.get('/:id', usersCtrl.show)
 
 
 //PUT /api/v1/users/:id
