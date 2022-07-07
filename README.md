@@ -1,7 +1,8 @@
 # backend
 
 #### Description
- app using my own API to create customers(clients)
+ app using my own API to create customers(clients) 
+ and create transactions
 ***
 ## Development Process
 Date | Progress | Blockers | Goals
@@ -20,3 +21,9 @@ Date | Progress | Blockers | Goals
 - display balance in those accounts
 - create statement grouped by month
 - create dash boards display the withdrawl versus deposit 
+# frontend
+create app dealing with different clients and their different accounts where customers will be able to add transactions and delete them and check the balance 
+## Technologies
+1. React
+2. Bootstrap
+3. Css
