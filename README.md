@@ -1,7 +1,7 @@
 # backend
 
 #### Description
- app using my own API to create customers(clients) 
+ Full MERN stack BudgetTracker app using my own API to create customers(clients) 
  and create transactions
 ***
 
@@ -23,15 +23,18 @@
 - PUT /api/v1/users/:id
 -POST/api/v1/users/login
 
+# frontend
+Created React  components where the user can sign up , login, add daily transactions to add transactions, delete them and check the balance 
+
+## Technologies
+1. React
+2. Bootstrap
+3. Css
+
 ## Stretch Goals
 - create different accounts per user saving, checking 
 - display balance in those accounts
 - create statement grouped by month
 - display transactions in a specific day using DatePicker
-# frontend
-create app dealing with different clients and their different accounts where customers will be able to add transactions and delete them and check the balance 
-## Technologies
-1. React
-2. Bootstrap
-3. Css
+
 
