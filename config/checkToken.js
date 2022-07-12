@@ -2,11 +2,11 @@ const jwt= require('jsonwebtoken')
 
 module.exports = (req,res,next)=>{
     //check for token being sent in headerws or query parameter
-    let token = req.get('Authorization') || process.env.TESTING_TOKEN
+    let token = req.get('Authorization') 
     if(token)
     {
         //we need a space for our token string between the word breaer and our token
-        token=token.replace('Bearer ','')
+        token=token.replace('Bearer ', '')
 
         jwt.verify(token, process.env.SECRET, (err,decoded)=>{
             req.user = err ? null : decoded.user
