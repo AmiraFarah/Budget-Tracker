@@ -1,3 +1,4 @@
+require('dotenv').config()
 const User = require('../../models/User')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
@@ -74,7 +75,7 @@ const update = async (req, res) => {
 const createJWT = user =>{
     return jwt.sign(
         {user},//payload
-        process.env.secret,//secret
+        process.env.SECRET,//secret
         {expiresIn :'48h'}//options
     )
 }
