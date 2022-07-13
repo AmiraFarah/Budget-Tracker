@@ -25,7 +25,7 @@ app.use('/api/v1/transactions',ensureLoggedIn, require('./routes/api/transaction
 
 
 //==========port=============
-const port = 9090
+const port = process.env.PORT ||  9090
 app.listen(port,()=> console.log(`Express app running on port ${port}`))
 
 
